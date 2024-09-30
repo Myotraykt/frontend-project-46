@@ -7,3 +7,6 @@
 ### СИСТЕМНЫЕ ТРЕБОВАНИЯ
 
 ### ИНСТРУКЦИИ ПО УСТАНОВКЕ
+
+### ASCIINEMA GENDIFF (STEP 4)
+https://asciinema.org/a/SDqKHOKeH5THlvEylAXr3TTH1
