@@ -14,7 +14,7 @@ const genDiff = (filepath1, filepath2) => {
 
     if (key in data1 && key in data2) {
       if (value1 === value2) {
-        return null;
+        return `  ${key}: ${value1}`;
       }
       return   `- ${key}: ${value1}\n+ ${key}: ${value2}`;
     }
