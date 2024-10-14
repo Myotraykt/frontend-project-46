@@ -1,9 +1,9 @@
-import parseJsonFile from "./parser.js";
+import parseFile from "../parsers/parserYml.js";
 import _ from 'lodash';
 
 const genDiff = (filepath1, filepath2) => {
-  const data1 = parseJsonFile(filepath1);
-  const data2 = parseJsonFile(filepath2);
+  const data1 = parseFile(filepath1);
+  const data2 = parseFile(filepath2);
 
   const keys = _.union(Object.keys(data1), Object.keys(data2));
   const sortedKeys = _.sortBy(keys);
