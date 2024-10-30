@@ -16,4 +16,7 @@ describe('Testing the function genDiff', () => {
   test('format Stylish', () => {
     expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'stylish')).toEqual(readFile('expectedFileStylish.txt'));
   });
+  test('formatPlain', () => {
+    expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'plain')).toEqual(readFile('expectedFilePlain.txt'));
+  });
 });

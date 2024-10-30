@@ -1,9 +1,12 @@
 import stylish from '../formatters/stylish.js';
+import plain from '../formatters/plain.js';
 
 const formatter = (node, format) => {
   switch (format) {
     case 'stylish':
       return stylish(node);
+    case 'plain':
+      return plain(node);
     case 'json':
       return JSON.stringify(node);
     default:
