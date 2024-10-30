@@ -7,7 +7,7 @@ const status = {
   nested: ' ',
 };
 
-// Функция для получения отступов
+// получаем отступы
 const getIndent = (depth, correctSize = 0) => {
   const replacer = '  ';
   const indentSize = depth * 2;
@@ -16,7 +16,7 @@ const getIndent = (depth, correctSize = 0) => {
   return { currentIndent, bracketIndent };
 };
 
-// Форматирование фигурных скобок
+// форматирование фигурных скобок
 const formatBraces = (lines, depth) => {
   const { bracketIndent } = getIndent(depth);
   return [
@@ -26,7 +26,7 @@ const formatBraces = (lines, depth) => {
   ].join('\n');
 };
 
-// Строковое представление объекта
+// представляем строковое видение 
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
     return `${value}`;
@@ -40,7 +40,7 @@ const stringify = (value, depth) => {
   return formatBraces(lines, depth);
 };
 
-// Основная функция форматирования
+// основная функция для форматирования 
 const stylish = (node, depth = 1) => {
   const result = node.map(({
     key, value, type, value1, value2, children,

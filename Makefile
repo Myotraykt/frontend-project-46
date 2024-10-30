@@ -10,11 +10,11 @@ help:
 runStylish:
 	node bin/gendiff.js '__fixtures__/file1.json' '__fixtures__/file2.json' --format stylish
 
-gendiff yml:
-	node bin/gendiff.js __fixtures__/file1.yml __fixtures__/file2.yml
+runPlain:
+	node bin/gendiff.js '__fixtures__/file1.json' '__fixtures__/file2.json' --format plain
 
-publish:
-	npm publish --dry-run
+runJson:
+	node bin/gendiff.js '__fixtures__/file1.json' '__fixtures__/file2.json' --format json
 
 lint:
 	npx eslint
@@ -23,4 +23,8 @@ lint-fix:
 	npx eslint --fix
 
 test:
-	NODE_OPTIONS=--experimental-vm-modules npx jest
+	npm test --watchAll
+	npx jest --coverage
+
+test-coverage:
+	npm test --coverage --coverageProvider=v8
