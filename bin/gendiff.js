@@ -1,25 +1,19 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import genDiff from '../src/index.js';
-import _ from 'lodash';
 
 const program = new Command();
 
 program
   .name('gendiff')
-  .arguments('<filepath1> <filepath2>')
   .description('Compares two configuration files and shows a difference.')
+  .usage('[options] <filepath1> <filepath2>')
   .version('1.0.0')
-  .option('-f, --format <type>', 'output format')
+  .option('-f, --format [type]', 'output format (options: stylish, json)', 'stylish')
+  .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2) => {
-    const diff = genDiff(filepath1, filepath2);
+    const diff = genDiff(filepath1, filepath2, program.opts().formatStylish);
     console.log(diff);
   });
-
-program.on('--help', () => {
-  console.log('');
-  console.log('Examples:');
-  console.log('  $ gendiff file1.json file2.json -f json');
-});
 
 program.parse(process.argv);

@@ -1,8 +1,9 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
+import globals from 'globals';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
+import pluginJs from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 
 // mimic CommonJS variables -- not needed if using CommonJS
@@ -50,9 +51,8 @@ export default [
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
       'no-console': 'off',
+      'no-restricted-syntax': ['off', 'ForOfStatement'],
       'import/no-extraneous-dependencies': 'off',
     },
   },
 ];
-
-// pluginJs.configs.recommended

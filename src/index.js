@@ -1,33 +1,22 @@
-import parseFile from "../parsers/parserYml.js";
-import _ from 'lodash';
+/* eslint-disable import/prefer-default-export */
+import { readFileSync } from 'fs';
+import path from 'path';
+import { cwd } from 'process';
+import parseFile from '../src/parser.js';
+import compareDeep from '../src/compareDeep.js';
+import formatter from '../src/formatters/index.js';
 
-const genDiff = (filepath1, filepath2) => {
-  const data1 = parseFile(filepath1);
-  const data2 = parseFile(filepath2);
+const getPath = (filepath) => path.resolve(cwd(), filepath);
+const readFile = (filepath) => readFileSync(getPath(filepath), 'utf-8');
+const getExtension = (filepath) => path.extname(filepath).split('.')[1];
 
-  const keys = _.union(Object.keys(data1), Object.keys(data2));
-  const sortedKeys = _.sortBy(keys);
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  const obj1 = parseFile(readFile(filepath1), getExtension(filepath1));
+  const obj2 = parseFile(readFile(filepath2), getExtension(filepath2));
 
-  const result = sortedKeys.map((key) => {
-    const value1 = data1[key];
-    const value2 = data2[key];
+  const result = compareDeep(obj1, obj2);
 
-    if (key in data1 && key in data2) {
-      if (value1 === value2) {
-        return `  ${key}: ${value1}`;
-      }
-      return   `- ${key}: ${value1}\n+ ${key}: ${value2}`;
-    }
-    
-    if (key in data1) {
-      return   `- ${key}: ${value1}`;
-    }
-    
-    return   `+ ${key}: ${value2}`;
-  }).filter(Boolean);
-  return `{\n${result.join('\n')}\n}`;
+  return formatter(result, format);
 };
 
-export default genDiff;
-
-// echo \"Error: no test specified\" && exit 1
+export default gendiff;

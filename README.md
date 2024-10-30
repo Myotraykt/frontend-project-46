@@ -21,3 +21,6 @@ npm - verison 10.5.0
 
 ### ASCIINEMA GENDIFF (STEP 4)
 https://asciinema.org/a/SDqKHOKeH5THlvEylAXr3TTH1
+
+### ASCIINEMA TEST (STEP 7)
+https://asciinema.org/a/bQFmyN55buhxwmM9zjj8yeaAQ
