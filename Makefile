@@ -11,7 +11,7 @@ runStylish:
 	gendiff '__fixtures__/file1.json' '__fixtures__/file2.json' --format stylish
 
 runPlain:
-	node bin/gendiff.js '__fixtures__/file1.json' '__fixtures__/file2.json' --format plain
+	gendiff '__fixtures__/file1.json' '__fixtures__/file2.json' --format plain
 
 runJson:
 	gendiff '__fixtures__/file1.json' '__fixtures__/file2.json' --format json
