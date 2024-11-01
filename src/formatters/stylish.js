@@ -26,7 +26,7 @@ const formatBraces = (lines, depth) => {
   ].join('\n');
 };
 
-// представляем строковое видение 
+// представляем строковое видение
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
     return `${value}`;
@@ -40,7 +40,7 @@ const stringify = (value, depth) => {
   return formatBraces(lines, depth);
 };
 
-// основная функция для форматирования 
+// основная функция для форматирования
 const stylish = (node, depth = 1) => {
   const result = node.map(({
     key, value, type, value1, value2, children,

@@ -13,24 +13,33 @@
 ### ОПИСАНИЕ ПРОЕКТА
 В этом проекте мы реализовали вычислитель отличий, написанный на чистом JavaScript.
 Поддерживаемеые форматы файлов: yaml, json
-Юлагодаря разным форматтерам, мы можем получить вывод в нескольких видах.
+Благодаря разным форматтерам, мы можем получить вывод в нескольких видах.
 
 ### СИСТЕМНЫЕ ТРЕБОВАНИЯ
 Node.js - version 21.7.3
 npm - verison 10.5.0
 
 ### ИНСТРУКЦИИ ПО УСТАНОВКЕ
+```sh
 git clone https://Myotraykt/frontend-project-46
+cd frontend-project-46
 make install
+```
 
 ### СРАВНИТЬ 2 ФАЙЛА С ФОРМАТОМ "STYLISH":
+```bash
 make runStylish
+```
 
 ### СРАВНИТЬ 2 ФАЙЛА С ФОРМАТОМ "PLAIN":
+```bash
 make runPlain
+```
 
 ### СРАВНИТЬ 2 ФАЙЛА С ФОРМАТОМ "JSON":
+```bash
 make runJson
+```
 
 ### ASCIINEMA GENDIFF (STEP 4)
 https://asciinema.org/a/SDqKHOKeH5THlvEylAXr3TTH1

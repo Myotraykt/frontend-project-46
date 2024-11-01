@@ -1,10 +1,9 @@
-/* eslint-disable import/prefer-default-export */
 import { readFileSync } from 'fs';
 import path from 'path';
 import { cwd } from 'process';
-import parseFile from '../src/parser.js';
-import compareDeep from '../src/compareDeep.js';
-import formatter from '../src/formatters/index.js';
+import parseFile from './parser.js';
+import compareDeep from './compareDeep.js';
+import formatter from './formatters/index.js';
 
 const getPath = (filepath) => path.resolve(cwd(), filepath);
 const readFile = (filepath) => readFileSync(getPath(filepath), 'utf-8');
